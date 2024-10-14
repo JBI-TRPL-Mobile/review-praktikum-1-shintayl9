@@ -20,6 +20,11 @@ class TentangPage extends StatelessWidget {
                 'Dibuat oleh: Shinta Yulistiana',
                 style: TextStyle(fontSize: 18),
               ),
+              SizedBox(height: 8),
+              Text(
+                'Versi: 1.0',
+                style: TextStyle(fontSize: 16),
+              )
             ],
           ),
         ),

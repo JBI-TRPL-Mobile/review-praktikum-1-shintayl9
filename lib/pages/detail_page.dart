@@ -3,10 +3,18 @@ import 'package:flutter/material.dart';
 class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Map<String, String> book =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+    final Map<String, String>? book =
+        ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
+    if (book == null) {
+      return Scaffold(
+        appBar: AppBar(title: Text('Detail Buku')),
+        body: Center(
+          child: Text('Tidak ada data buku yang tersedia.'),
+        ),
+      );
+    }
     return Scaffold(
-      appBar: AppBar(title: Text(book['judul']!)),
+      appBar: AppBar(title: Text(book['title']!)),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -20,7 +28,7 @@ class DetailPage extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              book['Deskripsi']!,
+              book['description']!,
               style: TextStyle(fontSize: 16),
             ),
           ],

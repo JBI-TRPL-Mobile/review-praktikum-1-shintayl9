@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
         itemCount: books.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(books[index]['judul']!),
+            title: Text(books[index]['Judul']!),
             trailing: ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(
